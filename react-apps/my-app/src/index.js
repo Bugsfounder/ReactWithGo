@@ -8,8 +8,8 @@ root.render(
     <div className="container">
       <div className="row">
         <div className="col">
-          <AppClass />
-          <HelloWorld />
+          <AppClass msg="Hello, world!" />
+          <HelloWorld msg="Hello, again!" />
         </div>
       </div>
     </div>
