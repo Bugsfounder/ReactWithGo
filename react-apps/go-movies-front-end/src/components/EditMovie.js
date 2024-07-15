@@ -1,11 +1,12 @@
 import React from 'react'
-const Movies = () => {
+
+const EditMovie = () => {
     return (
         <div>
-            <h2>Movies</h2>
+            <h2>Edit Movie</h2>
             <hr />
         </div>
     )
 }
 
-export default Movies
+export default EditMovie

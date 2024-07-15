@@ -1,4 +1,4 @@
-import Home from "./components/Home";
+import { Link, Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
           <h1 className="mt-3">Go Watch a Movie!</h1>
         </div>
         <div className="col text-end">
-          <a href="#!"><span className="badge bg-success">Login</span></a>
+          <Link to="/login"><span className="badge bg-success">Login</span></Link>
         </div>
         <hr className="mb-3" />
       </div>
@@ -18,18 +18,20 @@ function App() {
         <div className="col-md-2">
           <nav>
             <div className="list-group">
-              <a href="#!" className="list-group-item list-group-item-action">Home</a>
-              <a href="#!" className="list-group-item list-group-item-action">Movies</a>
-              <a href="#!" className="list-group-item list-group-item-action">Genres</a>
-              <a href="#!" className="list-group-item list-group-item-action">Add Movie</a>
-              <a href="#!" className="list-group-item list-group-item-action">Manage Catalogue</a>
-              <a href="#!" className="list-group-item list-group-item-action">GraphQL</a>
+              <Link to="/" className="list-group-item list-group-item-action">Home</Link>
+              <Link to="/movies" className="list-group-item list-group-item-action">Movies</Link>
+              <Link to="/genres" className="list-group-item list-group-item-action">Genres</Link>
+              <Link to="/admin/movie/0" className="list-group-item list-group-item-action">Add Movie</Link>
+              <Link to="/manage-catalogue" className="list-group-item list-group-item-action">Manage Catalogue</Link>
+              <Link to="/graphql" className="list-group-item list-group-item-action">GraphQL</Link>
             </div>
           </nav>
         </div>
 
         <div className="col-md-10">
-          <Home />
+
+          <Outlet />
+
         </div>
 
       </div>
