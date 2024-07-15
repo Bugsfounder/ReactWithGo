@@ -174,8 +174,7 @@ const ExampleComponent = () => {
 
 export default ExampleComponent;
 ```
-### OnSubmit
-### HandleSubmit
+
 ### Ref
 Refs provide a way to access DOM nodes or React elements created in the render method.
 
@@ -325,13 +324,13 @@ root.render(
 #### Outlet
 Outlet is a component in React Router used to render child routes in nested routing.
 ```JS
-    {/* OUTLET */}
-    <Outlet context={{
-    jwtToken,
-    setJwtToken,
-    setAlertClassName,
-    setAlertMessage
-    }} />
+{/* OUTLET */}
+<Outlet context={{
+jwtToken,
+setJwtToken,
+setAlertClassName,
+setAlertMessage
+}} />
 ```
 ##### App.js
 ```js
@@ -435,12 +434,14 @@ jsx
 ```
 ### Outlet Context
 When we want to pass some variables to some components we can use outlet context.
-```js
-    <Outlet context={{
-    jwtToken,
-    setJwtToken,
-    setAlertClassName,
-    setAlertMessage
-    }} />
+```jsx
+<Outlet context={{
+jwtToken,
+setJwtToken,
+setAlertClassName,
+setAlertMessage
+}} />
 ```
 ### Showing Error, warning, message
+### OnSubmit
+### HandleSubmit
