@@ -4,9 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
-
-	"github.com/bugsfounder/backend/internal/models"
 )
 
 func (app *application) Home(w http.ResponseWriter, r *http.Request) {
@@ -31,37 +28,13 @@ func (app *application) Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) AllMovies(w http.ResponseWriter, r *http.Request) {
-	var movies []models.Movie
 
-	rd, _ := time.Parse("2006-01-02", "1986-03-07")
+	movies, err := app.DB.AllMovies()
 
-	highlander := models.Movie{
-		ID:          1,
-		Title:       "Highlander",
-		ReleaseDate: rd,
-		MPAARating:  "R",
-		RunTime:     116,
-		Description: "A very nice movie",
-		CreateAt:    time.Now(),
-		UpdatedAt:   time.Now(),
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
-
-	movies = append(movies, highlander)
-
-	rd, _ = time.Parse("2006-01-02", "1981-06-12")
-
-	rotla := models.Movie{
-		ID:          2,
-		Title:       "Raiders of the Lost Ark",
-		ReleaseDate: rd,
-		MPAARating:  "PG-13",
-		RunTime:     115,
-		Description: "Another very nice movie",
-		CreateAt:    time.Now(),
-		UpdatedAt:   time.Now(),
-	}
-
-	movies = append(movies, rotla)
 
 	out, err := json.Marshal(movies)
 
